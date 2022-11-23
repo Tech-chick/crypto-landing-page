@@ -711,7 +711,6 @@ form {
         color: white;
         cursor: pointer;
         font-size: 1.5em;
-       
         display: flex; 
     }
  
@@ -1053,6 +1052,22 @@ form {
         top: 1.5em;
         right: 0.2em;
     }
+
+    
+    #navbar .nav-link {
+    margin: 0.7em 1em;
+    color: white;
+    line-height: 3em;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+     
+    }
+
+    .nav-link1{
+        font-size: 1em;
+    }
+   
 
     .logo {
         left: 1em;
