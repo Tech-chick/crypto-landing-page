@@ -124,7 +124,7 @@ body{
 
 .hero {
 
-    margin-top: 8em;
+    margin-top: 6em;
     color: white;
     padding: 0em 1em;
     display: flex;
@@ -311,16 +311,22 @@ body{
   
 /*------Hash-rate section----*/
 
-.hash-rate {
+.Hash{
+    padding: 1em 6em;
+    z-index: 32;
+}
+.hash-rate{
+    position: relative;
     background-color: white;
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 3em 2em;
     border-radius: 1em;
-    z-index: 22;
+    z-index: 92;
     position: relative; 
     margin: 0 auto -8em auto;
 }
+ 
 
 form input {
      border-top: none;
@@ -336,8 +342,9 @@ form input {
 .form-container {
    margin: 0 auto;
    padding: 0 1em;
+    
 }
-
+ 
 form {
     display: flex;
     margin-bottom: 3em;
@@ -499,8 +506,9 @@ form {
 }
 
 .fea-col{
-    display: flex; 
-    margin: 3em 2em;
+    display: flex;
+    flex-direction: row;
+    margin: 5em 1em;
 }
 
 .fea-col img {
@@ -523,10 +531,18 @@ form {
     padding-top: 7em;
 }
 
-.last-child {
-  padding-top: 4em;
-  flex-basis: 100%;
+.last-caption {
+    padding-top: 7em;
 }
+
+.last-child{
+    display: flex;
+    margin-top: 4em;
+}
+ 
+ 
+
+
 
 /*----Banner-Section-----*/
 
@@ -536,7 +552,6 @@ form {
 
 .banner-container {
     background-color: rgb(53, 56, 235);
-    display: flex;
     width: 100%;
     height: 100%;
     padding: 4em 2em;
@@ -544,14 +559,10 @@ form {
     z-index: 72;
     margin: 0 auto;   
 }
-
-.subscribe{
-    display: flex;
-    flex-basis: 60% 20%;
-    gap: 2em;
-}
+ 
 
 .start {
+    display: flex;
     margin-right: 2em;
 }
 
@@ -567,16 +578,15 @@ form {
     color: white;
 }
  
-.banner-container input {
+.start input {
     background-color: transparent;
     border-left: none;
     border-right: none;
     border-top: none;
-    width: 100%;
+    width: 40%;
     outline: none;
     color: white;
-    margin-left: 8em;
-    position: relative;
+    margin-left: 7em;
     font-family: 'Oxanium';
     border-bottom: 1px white solid;
 }
@@ -586,12 +596,15 @@ form {
     font-size: 1.5em;
 }
 
-.banner button {
+#banner-button {
+    left: 82%;
+    position: absolute;
+    display: flex;
     background-color: white;
     border: none;
-    width: 20%;
-    padding: 0.7em 0.9em;
+    padding: 1em 1em;
     border-radius: 0.8em;
+    top: 52%;
     font-family: 'oxanium';   
 }
 
@@ -660,6 +673,32 @@ form {
 .media .fa:hover {
     color: blue;
 }
+
+ 
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+} 
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+ 
+.reveal2 {
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease;
+} 
+
+.reveal2.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
  
 @media screen and (max-width:969px) {
     
@@ -672,12 +711,13 @@ form {
         color: white;
         cursor: pointer;
         font-size: 1.5em;
-        display: inline;
        
+        display: flex; 
     }
  
 
     .hamburger {
+        z-index: 9999;
         display: block;
         right: 0em;
         top: 1.5em;
@@ -696,22 +736,22 @@ form {
 
     
     #navbar {
-      display: flex;
+      display: flex; 
       text-align: center;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      height: 200vh;
+      height: 100vh;
       position: fixed;
-      z-index: 999;
-      right: 0%;
+      z-index: 9999;
       top: 0;
-      
+      right: -100%;
+      transition: 0.5s ease;
       background-color: rgb(2, 2, 70);
     }
  
-    #navbar:active {
-      right: 0;
+    #navbar.active {
+      right: 0%;
     }
 
     #navbar .nav-link:hover::after{
@@ -725,6 +765,10 @@ form {
 
     #white {
        width: 19%;
+    }
+
+    .hero {
+        margin-top: 3em;
     }
  
     .hero-caption {
@@ -758,14 +802,19 @@ form {
       margin-right: 1em;
    }
 
+   .icons {
+    margin: 6em 0em 6em 0em;
+   }
    .row {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
    }
 
    .col{
     margin: 1em auto;
    }
+
+
 
 /*----why-section---*/
 
@@ -788,6 +837,11 @@ form {
     }
 /*-------hash-rate section-----*/
 
+   .Hash{
+      padding: 1em 3em;
+      position: relative;
+      z-index: 32;
+   }
     .hash-rate {
        width: 90%;
     }
@@ -851,17 +905,17 @@ form {
 
 
 /*-----Features-------*/
-    
-   .fea-col {
-      flex-direction: column;
-   }
-
+     
    .features h3 {
      padding: 2em 1em;
    }
 
    .fea-caption h2 {
      padding-right: 4em;
+   }
+
+   .fea-col{
+     display: block;
    }
 
    .fea-col img {
@@ -871,16 +925,16 @@ form {
    }
 
    #queries {
-    flex-direction: column-reverse;
+     flex-direction: column-reverse;
+     margin-top: 1em;
    }
 
    .fea-caption:nth-child(2) {
-    padding-left: 5em;
+     padding-left: 5em;
+     padding-top: 2em;
    }
 
-   .last-child {
-    padding-left: 5em;
-   }
+   
 
 /*----banner----*/
     
@@ -892,21 +946,48 @@ form {
 
    .banner-container {
        width: 100%;
-       padding: 2em;
+       padding: 1em;
        flex-direction: column;
     }
 
-    .subscribe {
-         flex-direction: column;
+    
+    .start {
+       margin: 0 auto;
+       display: block;
     }
 
-    .subscribe input {
-       margin: 2em 0;
+    #banner-button {
+        display: block;
+        margin: 6em auto 1em auto;
+        top: 0;
+        left: 0;
+        position: relative;
     }
 
-    .subscribe button {
-        margin: 0 auto;
-    }
+    
+    .start h3 {
+     text-align: center;
+     padding-bottom: 1em;
+     font-weight: 600;
+     font-size: 1.9em;
+     color: white;
+   }
+
+    
+  .start p {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: white;
+  }
+
+  .start input{
+   position: absolute;
+   margin: 2em auto;
+   left: 30%;
+
+  }
+ 
  
 /*---footer---*/
     .footer {
@@ -938,6 +1019,7 @@ form {
 
    .cards img {
       margin-right: 0em;
+    
    }
 
    .copyright {
@@ -1053,9 +1135,23 @@ form {
         margin-top: 1em;
     }
 
+    .row {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+     }
+
+    .Hash{
+        padding: 1em 1em;
+     }
+
     .features h3 {
         padding: 2em 0.5em;
         font-size: 1.5em;
+    }
+
+    .fea-con{
+        flex-wrap: wrap;
     }
 
     .fea-caption {
@@ -1081,6 +1177,7 @@ form {
    .fea-col {
      margin: 1em 1em;
    }
+ 
 
    .banner-container {
      flex-direction: column;
@@ -1102,6 +1199,14 @@ form {
    .start {
      margin-right: 0;
    }
+
+     
+   .start p {
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: white;
+  }
 
    .banner button {
     margin: 0 auto;
